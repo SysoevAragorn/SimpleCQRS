@@ -44,22 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CQRS - Копировать\Commands\CommandDispatcher.cs" />
-    <Compile Include="CQRS - Копировать\Commands\Interface\ICommand.cs" />
-    <Compile Include="CQRS - Копировать\Commands\Interface\ICommandDispatcher.cs" />
-    <Compile Include="CQRS - Копировать\Commands\Interface\ICommandHandler.cs" />
-    <Compile Include="CQRS - Копировать\Commands\Interface\ICommandValidator.cs" />
-    <Compile Include="CQRS - Копировать\Commands\Interface\IDispatcherComponent.cs" />
-    <Compile Include="CQRS - Копировать\Common\Interfaces\IDispatcherComponentsResolver.cs" />
-    <Compile Include="CQRS - Копировать\Common\NinjectComponentsResolver.cs" />
-    <Compile Include="CQRS - Копировать\Messages\Interfaces\IMessage.cs" />
-    <Compile Include="CQRS - Копировать\Messages\Interfaces\IMessageDispatcher.cs" />
-    <Compile Include="CQRS - Копировать\Messages\Interfaces\IMessageHandler.cs" />
-    <Compile Include="CQRS - Копировать\Messages\MessageDispatcher.cs" />
-    <Compile Include="CQRS - Копировать\Queries\Interfaces\IQuery.cs" />
-    <Compile Include="CQRS - Копировать\Queries\Interfaces\IQueryDispatcher.cs" />
-    <Compile Include="CQRS - Копировать\Queries\Interfaces\IQueryHandler.cs" />
-    <Compile Include="CQRS - Копировать\Queries\QueryDispatcher.cs" />
     <Compile Include="CQRS\Commands\CommandDispatcher.cs" />
     <Compile Include="CQRS\Common\Interfaces\IDispatcherComponentsResolver.cs" />
     <Compile Include="CQRS\Commands\Interface\ICommandValidator.cs" />

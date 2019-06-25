@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SimpleCQRS.CQRS.Common;
 
-namespace SimpleCQRS.CQRS.Commands {
+namespace SimpleCQRS {
 	public class CommandDispatcher : ICommandDispatcher {
 		protected readonly IDispatcherComponentsResolver _componentsResolver;
 

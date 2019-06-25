@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using SimpleCQRS.CQRS.Common;
 
-namespace SimpleCQRS.CQRS.Messages {
+namespace SimpleCQRS {
 	public class MessageDispatcher : IMessageDispatcher {
 		protected readonly IDispatcherComponentsResolver componentsResolver;
 
