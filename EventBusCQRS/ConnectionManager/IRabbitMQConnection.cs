@@ -48,6 +48,8 @@ namespace EventBusCQRS.ConnectionManager {
 		void PublishToExchange(string exchangeName, string routingKey, string message);
 		void BasicAck(ulong deliveryTag, bool multiply);
 
+		
+
 		/// <summary>
 		/// Публикация в Exchange
 		/// </summary>

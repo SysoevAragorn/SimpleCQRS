@@ -2,11 +2,11 @@
 using System.Threading;
 using System.Threading.Tasks;
 using EventBusCQRS.ConnectionManager;
+using log4net;
 using RabbitMQ.Client.Events;
 
 namespace EventBusCQRS.CQRS {
 	public class RabbitBusContainer : IBusContainer {
-		//protected readonly IMessageDispatcher messageDispatcher;
 		protected readonly IHandlerItem handlerItem;
 
 
@@ -27,20 +27,19 @@ namespace EventBusCQRS.CQRS {
 			set;
 		}
 
-		public RabbitBusContainer(IRabbitMQConnection rabbitConnection, /*IMessageDispatcher _messageDispatcher,*/ IHandlerItem _handlerItem) {
+		public RabbitBusContainer(IRabbitMQConnection rabbitConnection, IHandlerItem _handlerItem) {
 			RabbitConnection = rabbitConnection;
-			//messageDispatcher = _messageDispatcher;
 			handlerItem = _handlerItem;
 			BusEndpoint = _handlerItem.EndPoint;
+			Log = LogManager.GetLogger("rabbit4netConsoleApp.Program");
 		}
 
 		public void Subscribe() {
 			ExecutingTask = new Task(Execute);
 			ExecutingTask.Start();
 		}
-
-
-		public virtual void EventingHandler_Received(object sender, BasicDeliverEventArgs ea) {
+		
+		protected virtual void EventingHandler_Received(object sender, BasicDeliverEventArgs ea) {
 			try {
 				RabbitConnection.BasicAck(ea.DeliveryTag, false);
 
@@ -52,7 +51,7 @@ namespace EventBusCQRS.CQRS {
 
 			} catch (Exception ex) {
 				ReturnOnErorr(ea.Body);
-				messageDispatcher.Publish<ErrorMessage>(new ErrorMessage(ex));
+				Log.Error(ex);
 			}
 		}
 

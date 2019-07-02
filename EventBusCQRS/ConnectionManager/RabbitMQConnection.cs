@@ -211,7 +211,11 @@ namespace EventBusCQRS.ConnectionManager {
 		public void BasicAck(ulong deliveryTag, bool v) {
 			RabbitChannel.BasicAck(deliveryTag, v);
 		}
+		public void BasicConsume(string queue, bool autoAsk, IBasicConsumer consumer) {
+			RabbitChannel.BasicConsume(queue, autoAsk, consumer);
+		}
 
+		
 		public void QueueDelete(string busEndpoint, bool ifUnused, bool ifEmpty) {
 			RabbitChannel.QueueDelete(busEndpoint, ifUnused, ifEmpty);
 		}

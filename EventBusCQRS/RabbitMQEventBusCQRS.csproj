@@ -37,6 +37,9 @@
     <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net46\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="RabbitMQ.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
       <HintPath>..\packages\RabbitMQ.Client.5.1.0\lib\net451\RabbitMQ.Client.dll</HintPath>
     </Reference>
@@ -69,10 +72,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\BaseCQRSBindingModule.cs" />
+    <Compile Include="Common\ExtendedMethods.cs" />
     <Compile Include="ConnectionManager\RabbitMQConnection.cs" />
     <Compile Include="ConnectionManager\ICommonFactory.cs" />
     <Compile Include="ConnectionManager\IRabbitMQConnection.cs" />
-    <Compile Include="CQRS\Class1.cs" />
+    <Compile Include="CQRS\RabbitCommandDispatcher.cs" />
+    <Compile Include="CQRS\IRabbitMessageHandler.cs" />
+    <Compile Include="CQRS\RabbitBusContainer.cs" />
     <Compile Include="CQRS\IBusContainer.cs" />
     <Compile Include="CQRS\IHandlerItem.cs" />
     <Compile Include="CQRS\IRabbitCommandHandler.cs" />
